@@ -2,9 +2,13 @@ import { DataTable, List } from 'react-admin';
 import { Edit, NumberInput, SimpleForm, TextInput } from 'react-admin';
 import { NumberField, Show, SimpleShowLayout, TextField } from 'react-admin';
 
+const movieFilters = [
+    <TextInput label="Search for Title" source="title" alwaysOn />,
+    <TextInput label="Search for ID" source="id" />,
+];
 
 export const MovieList = () => (
-    <List>
+    <List filters={movieFilters}>
         <DataTable>
             <DataTable.Col source="id" />
             <DataTable.Col source="title" />
